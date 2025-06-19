@@ -29,17 +29,17 @@ exports.login = async (req, res) => {
     
     // التحقق من وجود البريد الإلكتروني وكلمة المرور
     if (!email || !password) {
-      return res.status(400).json({ message: 'Email and password are required' });
+      return res.status(400).json({ message: 'Email and password are required', details: 'Both email and password must be provided' });
     }
 
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(401).json({ message: 'Invalid credentials', details: 'User not found' });
     }
 
     const isMatch = await user.comparePassword(password);
     if (!isMatch) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(401).json({ message: 'Invalid credentials', details: 'Password mismatch' });
     }
 
     const token = generateToken(user);
@@ -56,8 +56,8 @@ exports.login = async (req, res) => {
   } catch (error) {
     console.error('Login error:', error);
     res.status(500).json({ 
-      message: 'Server error', 
-      error: error.message 
+      message: 'Internal server error', 
+      details: error.message 
     });
   }
 };
