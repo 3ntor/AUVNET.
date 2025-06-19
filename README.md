@@ -74,7 +74,7 @@ Backend logs will show `Server running on port 8080`, while CRA will automatical
 Create `.env` (or edit the generated copy) in the project root:
 
 ```
-MONGO_URI=mongodb://localhost:27017/auvnet
+MONGO_URI= mongodb+srv://ahmed:ahmed123@ahmed.bymtr2n.mongodb.net/?retryWrites=true&w=majority&appName=ahmed
 JWT_SECRET=supersecret
 PORT=8080
 ```
