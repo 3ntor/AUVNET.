@@ -6,6 +6,9 @@ This repository contains:
 2. **Frontend** – React dashboard (Create-React-App) that embeds an **API Tester** for interacting with every backend endpoint, including history & pagination.
 
 ---
+`backend on http://localhost:8080`
+`frontend on http://localhost:3001`
+`deployed on https://melodious-lebkuchen-d6e9c2.netlify.app/`
 
 ## Tech Stack
 
@@ -45,7 +48,7 @@ AUVNET Backend Task/
 
 ```bash
 # 1. Clone
-git clone <your-repo-url>
+git clone <>
 cd "AUVNET Backend Task"
 
 # 2. Environment variables (backend)
@@ -57,11 +60,12 @@ cd frontend && npm install    # frontend deps
 cd ..                         # back to project root
 
 # 4. Run in development
-npm run dev       # starts backend on http://localhost:5000  (uses nodemon)
-cd frontend && npm start   # starts React on http://localhost:3001 (proxy → 5000)
+npm run dev       # starts backend on http://localhost:8080  (uses nodemon)
+cd frontend && npm start   # starts React on http://localhost:3001 (proxy → 8080)
 ```
 
-Backend logs will show `Server running on port 5000`, while CRA will automatically open `http://localhost:3001`.
+
+Backend logs will show `Server running on port 8080`, while CRA will automatically open `http://localhost:8080`.
 
 ---
 
@@ -72,21 +76,9 @@ Create `.env` (or edit the generated copy) in the project root:
 ```
 MONGO_URI=mongodb://localhost:27017/auvnet
 JWT_SECRET=supersecret
-PORT=5000
+PORT=8080
 ```
 
-A template is provided as **.env.example**.
-
----
-
-## Seeding (Optional)
-If you need an initial **admin** user and a sample **category**, run:
-
-```bash
-node seed.js
-```
-
-*(You will find/adjust `seed.js` in the backend if included.)*
 
 Admin credentials from the seed script:
 ```
@@ -94,7 +86,6 @@ email: admin@admin.com
 password: admin
 ```
 
----
 
 ## API Tester in Dashboard
 
@@ -124,34 +115,13 @@ password: admin
 
 ## Deployment
 
-The app is ready for deployment on any Node-compatible host (Render, Heroku, Railway, etc.).
-Ensure environment variables are set and CRA build output is served (or host the frontend separately on Netlify/Vercel).
+The app is ready for deployment on any Node-compatible host ( Railway).
+Ensure environment variables are set and CRA build output is served (or host the frontend separately on Netlify).
 
 ### Live Demo
 
 The application is deployed at:
-- Backend: [https://auvnet-backend-task.onrender.com](https://auvnet-backend-task.onrender.com)
-- Frontend: [https://auvnet-frontend-task.netlify.app](https://auvnet-frontend-task.netlify.app)
+" https://melodious-lebkuchen-d6e9c2.netlify.app/ "
 
-### Deployment Instructions
 
-1. Backend:
-   - Create a new project on Render.com
-   - Link your GitHub repository
-   - Set up environment variables:
-     - `MONGO_URI`
-     - `JWT_SECRET`
-     - `PORT`
 
-2. Frontend:
-   - Create a new project on Netlify
-   - Link your GitHub repository
-   - Set up environment variables if needed
-
-Note: Make sure to update the API endpoint in the frontend to point to your deployed backend URL.
-
----
-
-## License
-
-MIT – do whatever you like, just attribute.

@@ -22,7 +22,7 @@ const Dashboard = () => {
 
         // Fetch additional user stats (example)
         try {
-          const statsResponse = await fetch('http://localhost:5000/api/admin/stats', {
+          const statsResponse = await fetch('http://localhost:8080/api/admin/stats', {
             headers: {
               'Authorization': `Bearer ${token}`
             }

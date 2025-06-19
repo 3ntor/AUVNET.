@@ -69,10 +69,10 @@ const ApiTester = () => {
   };
 
   const buildUrl = () => {
-    if (method !== 'GET') return `http://localhost:5000${endpoint}`;
+    if (method !== 'GET') return `http://localhost:8080${endpoint}`;
     const qs = `page=${page}&limit=${limit}`;
-    if (endpoint.includes('?')) return `http://localhost:5000${endpoint}&${qs}`;
-    return `http://localhost:5000${endpoint}?${qs}`;
+    if (endpoint.includes('?')) return `http://localhost:8080${endpoint}&${qs}`;
+    return `http://localhost:8080${endpoint}?${qs}`;
   };
 
   const handleSend = async () => {
