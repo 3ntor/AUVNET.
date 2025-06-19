@@ -4,7 +4,8 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 
 // API Configuration
-export const API_URL = 'https://backend-e-commerce-production-1103.up.railway.app';
+export const API_URL = 'https://auvnet-production.up.railway.app';
+
 
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem('token');
